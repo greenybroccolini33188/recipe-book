@@ -1,0 +1,41 @@
+import { EventEmitter, Injectable } from '@angular/core';
+import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { Ingredients, Recipes } from '../shared/typings';
+
+@Injectable()
+export class RecipeService {
+  private recipes: Recipes = [
+    new Recipe(
+      'A Test Recipe',
+      'This is simply a test',
+      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaG2cfLMIULCNfKLV82l_8K1f7iX_Go-85M_5eCTDxvExQpgNl4s7UWq4YMrsJmI3SURRuGhV7Luu9uHFB53QAu2WnW9E-FN0ollJHgNMMBEjJz2FGuzfFQfBKV5LFWzPztxjgSM9DtPpKrr-qrPlMQJrGwkvEcMxEXeUZSLMBW3_WIR73p-UO4gU30Q/s1280/cheese-garlic-bread-min.jpg',
+      [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
+    ),
+    new Recipe(
+      'Recipe 2',
+      'Recipe 2 Description',
+      'https://picturetherecipe.com/wp-content/uploads/2020/07/Butter-Chicken-PTR-Featured-395x500.jpg',
+      [new Ingredient('Buns', 2), new Ingredient('Meat', 1)]
+    ),
+    new Recipe(
+      'Recipe no. 3',
+      'This is the 3rd recipe',
+      'https://assets.bonappetit.com/photos/61b775620fb3fcc4cbf036c1/master/pass/20211208%20Spaghetti%20Squash%20with%20Tomato%20Sauce%20and%20Mozarella%20LEDE.jpg',
+      []
+    ),
+  ];
+  public recipeSelected: EventEmitter<Recipe> = new EventEmitter<Recipe>();
+
+  constructor(private slService: ShoppingListService) {}
+
+  public getRecipes(): Recipes {
+    // return copy of recipes array
+    return this.recipes.slice();
+  }
+
+  public addIngredientsToShoppingList(ingredients: Ingredients): void {
+    this.slService.addIngredients(ingredients);
+  }
+}
