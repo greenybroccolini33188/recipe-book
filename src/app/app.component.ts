@@ -7,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   public readonly title: string = 'recipe-book';
-  public loadedFeature: string;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.loadedFeature = 'recipe';
-  }
+  ngOnInit(): void {}
 }
