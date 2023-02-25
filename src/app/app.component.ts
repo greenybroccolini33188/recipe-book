@@ -14,8 +14,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loadedFeature = 'recipe';
   }
-
-  public onNavigate(feature: string): void {
-    this.loadedFeature = feature;
-  }
 }
