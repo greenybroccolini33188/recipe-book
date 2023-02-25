@@ -33,7 +33,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">{{ recipe.description }}</div>
+  <div class="col-xs-12">
+    <p [ngStyle]="{ 'font-size.rem': 1.5, 'margin-top.rem': 1 }">
+      {{ recipe.description }}
+    </p>
+  </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
