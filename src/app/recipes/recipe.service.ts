@@ -35,6 +35,14 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
+  /**
+   * Return single recipe
+   * @param index the ID of the recipe
+   */
+  public getRecipe(index: number): Recipe {
+    return this.recipes[index];
+  }
+
   public addIngredientsToShoppingList(ingredients: Ingredients): void {
     this.slService.addIngredients(ingredients);
   }

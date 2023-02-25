@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <img
       [src]="recipe.imagePath"
-      alt="{{ recipe.name.trim() | lowercase }} img"
+      alt="{{ slugify(recipe.name.trim()) | lowercase }}-image"
       class="image-responsive recipe-image img-rounded"
     />
   </div>

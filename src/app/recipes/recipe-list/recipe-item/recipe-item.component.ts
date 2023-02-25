@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from '../../recipe.model';
-import { RecipeService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -8,13 +7,12 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipe-item.component.scss'],
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe: Recipe;
-
-  constructor(private recipeService: RecipeService) {}
+  @Input() public recipe: Recipe;
+  @Input() public index: number;
 
   ngOnInit(): void {}
 
-  public onSelected(): void {
-    this.recipeService.recipeSelected.emit(this.recipe);
+  public slugify(text: string): string {
+    return text.replace(/[_\-\(\)\[\]\s]+/, '-');
   }
 }
