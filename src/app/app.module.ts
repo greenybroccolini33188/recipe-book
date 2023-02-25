@@ -15,6 +15,7 @@ import { TimesPipe } from './shared/times.pipe';
 import { UnlessDirective } from './directives/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 // import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     UnlessDirective,
     DropdownDirective,
     RecipeStartComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [
