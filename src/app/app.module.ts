@@ -19,6 +19,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './recipes/recipe.service';
 import { SlugifyPipe } from './shared/slugify.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
+
 // import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
