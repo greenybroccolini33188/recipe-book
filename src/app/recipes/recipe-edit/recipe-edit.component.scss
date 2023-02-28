@@ -1,0 +1,10 @@
+$red: #f00;
+
+input,
+textarea {
+  &.ng-invalid {
+    &.ng-touched {
+      border: 1px solid $red;
+    }
+  }
+}

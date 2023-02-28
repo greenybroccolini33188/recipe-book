@@ -3,9 +3,11 @@ import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Ingredients, Recipes } from '../shared/typings';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
+  public recipesChanged: Subject<Recipes> = new Subject<Recipes>();
   private recipes: Recipes = [
     new Recipe(
       'A Test Recipe',
@@ -44,5 +46,16 @@ export class RecipeService {
 
   public addIngredientsToShoppingList(ingredients: Ingredients): void {
     this.slService.addIngredients(ingredients);
+    this.recipesChanged.next(this.getRecipes());
+  }
+
+  public addRecipe(recipe: Recipe): void {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.getRecipes());
+  }
+
+  public updateRecipe(index: number, newRecipe: Recipe): void {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.getRecipes());
   }
 }
