@@ -10,7 +10,7 @@
   <span class="pull-right">
     <img
       [src]="recipe.imagePath"
-      alt="{{ slugify(recipe.name.trim()) | lowercase }}-thumbnail"
+      alt="{{ recipe.name.trim() | slugify | lowercase }}-thumbnail"
       class="img-responsive recipe-img img-thumbnail"
     />
   </span>

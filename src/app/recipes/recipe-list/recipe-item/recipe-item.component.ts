@@ -11,8 +11,4 @@ export class RecipeItemComponent implements OnInit {
   @Input() public index: number;
 
   ngOnInit(): void {}
-
-  public slugify(text: string): string {
-    return text.replace(/[_\-\(\)\[\]\s]+/, '-');
-  }
 }

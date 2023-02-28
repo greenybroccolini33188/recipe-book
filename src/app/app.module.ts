@@ -17,6 +17,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
+import { SlugifyPipe } from './shared/slugify.pipe';
 // import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RecipeService } from './recipes/recipe.service';
     DropdownDirective,
     UnlessDirective,
     TimesPipe,
+    SlugifyPipe,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [RecipeService],

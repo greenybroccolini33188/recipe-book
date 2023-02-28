@@ -36,11 +36,6 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 
-  // todo: make this a pipe
-  public slugify(text: string): string {
-    return text.replace(/[_\-()\[\]\s]+/, '-');
-  }
-
   public onEditRecipe(): void {
     this.router.navigate(['edit'], { relativeTo: this.route }).then().catch();
   }
