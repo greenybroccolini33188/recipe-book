@@ -3,13 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [
-    `
-      .cursor-pointer {
-        cursor: pointer;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class HeaderComponent implements OnInit {
   public collapsed: boolean;
