@@ -49,7 +49,7 @@
               class="btn btn-primary"
               type="reset"
               (click)="onClear()"
-              [disabled]="!f.dirty"
+              [disabled]="!f.dirty && !f.touched"
             >
               Clear
             </button>

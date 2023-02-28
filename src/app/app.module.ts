@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -24,17 +24,17 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
-    RecipeDetailComponent,
     RecipeItemComponent,
+    RecipeDetailComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    TimesPipe,
-    UnlessDirective,
-    DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    DropdownDirective,
+    UnlessDirective,
+    TimesPipe,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [
     // ShoppingListService
   ],
