@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {
   AbstractControl,
@@ -33,6 +33,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private recipeService: RecipeService
   ) {}
 
@@ -96,6 +97,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     } else {
       this.recipeService.addRecipe(newRecipe);
     }
+    this.navigateToRecipesList();
   }
 
   public onAddIngredient(): void {
@@ -108,5 +110,13 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         ]),
       })
     );
+  }
+
+  public onCancel(): void {
+    this.navigateToRecipesList();
+  }
+
+  private navigateToRecipesList(): void {
+    this.router.navigate(['../'], { relativeTo: this.route }).then().catch();
   }
 }
