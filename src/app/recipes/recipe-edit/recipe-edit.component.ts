@@ -116,6 +116,14 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.navigateToRecipesList();
   }
 
+  public onDeleteIngredient(index: number): void {
+    this.Ingredients.removeAt(index);
+  }
+
+  public clearAllIngredients(): void {
+    this.Ingredients.clear();
+  }
+
   private navigateToRecipesList(): void {
     this.router.navigate(['../'], { relativeTo: this.route }).then().catch();
   }
