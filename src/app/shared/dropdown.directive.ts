@@ -13,7 +13,8 @@ export class DropdownDirective implements OnInit {
   @HostBinding('class.open') private isOpen: boolean;
 
   @HostListener('document:click', ['$event']) public toggleOpen(): void {
-    this.isOpen = this.elRef.nativeElement.contains(event.target)
+    const { target }: { target: EventTarget } = event;
+    this.isOpen = this.elRef.nativeElement.contains(target)
       ? !this.isOpen
       : false;
   }
