@@ -4,9 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'times',
 })
 export class TimesPipe implements PipeTransform {
-  public transform(value: number, ...args: unknown[]): any {
+  public transform(value: number): any {
     const iterable: Iterable<any> = <Iterable<any>>{};
-    iterable[Symbol.iterator] = function* (): Generator<number, void, unknown> {
+    iterable[Symbol.iterator] = function* (): Generator<number, void> {
       let n: number = 0;
       while (n < value) {
         yield ++n;

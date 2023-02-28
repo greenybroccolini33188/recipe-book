@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ShortenPipe implements PipeTransform {
   public transform(value: string, length: number = 10): string {
-    return `${value.slice(0, length)}...`;
+    if (value.length > 10) return `${value.slice(0, length)} ...`;
+    return value;
   }
 }
